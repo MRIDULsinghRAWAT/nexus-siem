@@ -142,9 +142,6 @@ export default function App() {
         <div className="nav-menu">
           <a href="#" className="nav-menu-item active">Dashboard</a>
         </div>
-        <div style={{ fontSize: '0.8rem', color: '#cbd5e0', fontWeight: 500 }}>
-          SOC Admin | Online
-        </div>
       </nav>
 
       {/* Main Dashboard Container */}
