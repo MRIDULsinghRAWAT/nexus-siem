@@ -1,0 +1,8 @@
+[
+  {
+    "ip": "192.168.1.105",
+    "blocked_at": "2026-07-15T21:31:23.927708",
+    "reason": "mTLS Ingest Correlation trigger: SSH Brute Force",
+    "status": "ACTIVE"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "backend_url": "https://localhost:5001/api/ingest",
+  "target_logs": [
+    {
+      "path": "./test_auth.log",
+      "type": "auth_log"
+    },
+    {
+      "path": "./test_web.log",
+      "type": "web_log"
+    }
+  ],
+  "poll_interval_seconds": 0.5
+}

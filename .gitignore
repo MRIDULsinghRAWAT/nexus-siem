@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+dist/
+.env
+
+# Python build & caches
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Databases
+*.db
+backend/app/database/*.db
+backend/app/database/siem.db
+
+# Agent state and local buffers
+.offsets.json
+.offline_cache.json
+agent/.offline_cache.json
+agent/.offsets.json
+attacks_sim/*.log
+
+# Certificates (SSL/TLS private keys and certs)
+certs/
+certs/*.crt
+certs/*.key

@@ -1,0 +1,13 @@
+# Detection logic threshold and rule definitions
+rules:
+  - name: "SSH Brute Force"
+    event_type: "failed_login"
+    threshold: 5
+    time_window_seconds: 10
+    severity: "CRITICAL"
+
+  - name: "Web Directory Busting"
+    event_type: "http_404"
+    threshold: 20
+    time_window_seconds: 5
+    severity: "HIGH"
