@@ -4,6 +4,8 @@
 
 A secure, high-performance, and decentralized Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) sandbox environment. This framework features a multi-threaded endpoint shipper agent, a secure mTLS ingestion pipeline, an asynchronous WAL-mode database queue, a behavioral correlation engine, and a real-time SOC dashboard.
 
+![Dashboard Preview](dashboard_screenshot.png)
+
 ---
 
 ##  Project Abstract & Problem Statement
