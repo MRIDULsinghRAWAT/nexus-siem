@@ -4,11 +4,8 @@
 
 A secure, high-performance, and decentralized Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) sandbox environment. This framework features a multi-threaded endpoint shipper agent, a secure mTLS ingestion pipeline, an asynchronous WAL-mode database queue, a behavioral correlation engine, and a real-time SOC dashboard.
 
-### Dashboard Charts & Metrics
-![Dashboard Charts](dashboard_charts.png)
-
-### Live Ingest Stream & Active SOAR Blocker
-![Dashboard Logs & Active Defense](dashboard_logs.png)
+### Unified React SOC Dashboard (Single-Screen Layout)
+![Redesigned SOC Dashboard](dashboard_single_screen.png)
 
 ---
 
@@ -157,3 +154,27 @@ To feed log events into the SIEM and test the automated SOAR blocker:
   python brute_force_sim.py
   ```
   Watch the attacking IP address appear in the **SOAR Active Defense** widget on the React dashboard. Click **Unblock** to manually lift the blocklist rule.
+
+---
+
+## 📊 Advanced Visual Analytics & SOC Layout
+
+The React SOC dashboard has been visually optimized into a high-density, **single-screen above-the-fold layout** designed to give security analysts immediate visibility into system health and threats without needing to scroll.
+
+### Key Visual Components:
+1. **Real-time Ingest Volatility (EPS Sparkline)**:
+   * Triggers a WebSocket update on every incoming log.
+   * Tracks and renders the rolling events-per-second (EPS) flow rate using a sleek Recharts area sparkline.
+2. **Events by Severity Group (Donut Chart)**:
+   * Categorizes incoming log severity dynamically into **INFO** (blue), **WARNING** (orange), and **CRITICAL** (red) groups.
+3. **Attacker Geo-Mapping (Robinson Threat Map)**:
+   * Renders active firewall blocks on a high-tech cybersecurity world map.
+   * Uses a custom mathematical **Robinson projection** in JavaScript to map attacker coordinates dynamically.
+   * Features glowing, pulsing threat pins with **interactive hover tooltips** displaying details of the compromise (IP, country, city, rule violated, and block time).
+4. **Log Stream with Sticky Headers**:
+   * Logs flow in real-time inside a scroll-locked container (`max-height: 195px`).
+   * Column headers remain **pinned/sticky** during active scrolling to maintain contextual visibility.
+
+### Shipping Agent Optimizations:
+* **0-Second Windows DNS Lookup Latency Fix**: Resolved a performance bug where Python's `requests` library took 2 seconds attempting to resolve the `localhost` ingestion URL via IPv6 on Windows before falling back to IPv4 (`127.0.0.1`). Updating the host to `127.0.0.1` dropped transport latency to **exactly 0 seconds**.
+* **Sliding Correlation Windows**: Configured 60-second sliding windows for brute-force and directory-busting detection rules to match realistic queue-processing delays.

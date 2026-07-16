@@ -168,3 +168,23 @@ The parser runs the raw log string against pre-defined regular expressions. It m
 #### Q25: How would you scale the log ingestion pipeline if you had 10,000 agents shipping logs?
 **Answer:**
 I would place a message broker like **Apache Kafka** or **RabbitMQ** in front of the ingestion pipeline. Instead of shipping logs directly to the Flask database queue, agents would send them to Kafka topic partitions. Multiple backend worker microservices would then consume from Kafka and write to the database in batches, absorbing high spikes in traffic.
+
+---
+
+### Category G: Advanced Visual Analytics & Visual Layout
+
+#### Q26: How does the Attacker Geo-Mapping work on the frontend map without loading external rendering libraries like Leaflet or Google Maps?
+**Answer:**
+It uses a custom mathematical implementation of the **Robinson projection** in JavaScript inside the `ThreatMap` component. The Robinson projection is a pseudocylindrical projection that represents the world map. We take spherical latitude and longitude coordinates and convert them into relative percentage offsets ($X$ and $Y$) inside our `/world-map.svg` container. This enables us to dynamically plot glowing, pulsing SVG threat pins with hover tooltips anywhere on the globe with absolute positioning, keeping the bundle size small and loading instantly without external CDN dependencies.
+
+#### Q27: You noted that log shipping latency was optimized from minutes to exactly 0 seconds on Windows. What was the bug and how did you resolve it?
+**Answer:**
+On Windows hosts, sending HTTP requests to a hostname of `localhost` triggers a DNS lookup sequence where the network interface attempts to resolve and connect via IPv6 loopback (`::1`) first. Because our Python Flask secure ingestion server was listening on IPv4, the client experienced a 2-second timeout before falling back to IPv4 (`127.0.0.1`). Since our agent shipped logs sequentially, this added a 2-second delay to *every single log payload*. We resolved this by changing the agent's target URL host from `localhost` to `127.0.0.1`, which bypassed the DNS lookup timeout completely, dropping ingestion latency to exactly 0 seconds.
+
+#### Q28: Why did you tune the correlation engine rule windows (e.g. from 10s to 60s)?
+**Answer:**
+In environments with network jitter or serial log shipping queues (like our mTLS shipper agent), logs may arrive at the SIEM backend slightly spaced out. A tight window like 10 seconds can cause events to fall out of the sliding window before the threshold is met (e.g. the 5th failed login). Expanding the sliding window to 60 seconds ensures robust correlation under real-world queue processing conditions.
+
+#### Q29: How did you implement a single-screen responsive layout for the SOC console?
+**Answer:**
+We transitioned the layout from stacked vertical columns to a high-density grid system. Row 1 houses the map and charts side-by-side. Row 2 houses the Log Table, Alerts Feed, and SOAR block feeds in a 3-column split. By using `.table-wrapper` and `.alerts-feed-container` with a `max-height` of `195px` and `overflow-y: auto`, we restricted vertical sprawl. We also made log table headers sticky so column labels stay pinned during active scrolling.

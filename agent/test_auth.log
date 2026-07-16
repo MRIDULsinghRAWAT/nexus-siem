@@ -302,3 +302,229 @@ Jul 16 18:11:52 server CRON[79125]: session opened for user root
 Jul 16 18:11:53 server sshd[22491]: Accepted password for db_backup from 10.0.0.15 port 51009 ssh2
 Jul 16 18:11:54 server sshd[89307]: Accepted password for db_backup from 192.168.1.50 port 60879 ssh2
 Jul 16 18:11:57 server sshd[37202]: Accepted password for system_daemon from 192.168.1.50 port 60783 ssh2
+Jul 16 18:11:58 server CRON[65556]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:11:59 server CRON[28384]: session opened for user root
+Jul 16 18:12:00 server sshd[27787]: Accepted password for developer from 192.168.1.50 port 63261 ssh2
+Jul 16 18:12:00 server sshd[51962]: Accepted password for db_backup from 172.16.5.9 port 58266 ssh2
+Jul 16 18:12:01 server sshd[43791]: Accepted password for developer from 192.168.1.50 port 57913 ssh2
+Jul 16 18:12:03 server CRON[69119]: session opened for user root
+Jul 16 18:12:04 server CRON[38721]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:05 server CRON[82628]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:05 server CRON[10236]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:06 server CRON[53737]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:07 server CRON[31985]: session closed for user root
+Jul 16 18:12:08 server sshd[23166]: Accepted password for mridul from 172.16.5.9 port 53653 ssh2
+Jul 16 18:12:08 server sshd[10532]: Accepted password for developer from 192.168.1.50 port 63360 ssh2
+Jul 16 18:12:10 server CRON[77592]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:15 server CRON[31476]: session opened for user root
+Jul 16 18:12:15 server CRON[72263]: session opened for user root
+Jul 16 18:12:17 server sshd[82199]: Accepted password for mridul from 172.16.5.9 port 57197 ssh2
+Jul 16 18:12:17 server sshd[55745]: Accepted password for admin from 192.168.1.50 port 50372 ssh2
+Jul 16 18:12:19 server CRON[56818]: session closed for user root
+Jul 16 18:12:21 server CRON[37947]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:22 server sshd[66963]: Accepted password for mridul from 192.168.1.12 port 62713 ssh2
+Jul 16 18:12:22 server sshd[85017]: Accepted password for db_backup from 172.16.5.9 port 55327 ssh2
+Jul 16 18:12:23 server CRON[12522]: session closed for user root
+Jul 16 18:12:24 server CRON[20409]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:25 server sshd[57774]: Accepted password for admin from 10.0.0.15 port 56387 ssh2
+Jul 16 18:12:26 server CRON[91999]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:26 server CRON[17638]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:27 server CRON[36331]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:28 server sshd[56510]: Accepted password for developer from 192.168.1.50 port 60295 ssh2
+Jul 16 18:12:29 server sshd[70107]: Accepted password for mridul from 172.16.5.9 port 63779 ssh2
+Jul 16 18:12:29 server sshd[96956]: Accepted password for system_daemon from 192.168.1.50 port 55961 ssh2
+Jul 16 18:12:30 server sshd[95127]: Accepted password for mridul from 127.0.0.1 port 58326 ssh2
+Jul 16 18:12:31 server CRON[22835]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:32 server sshd[67175]: Accepted password for system_daemon from 172.16.5.9 port 52123 ssh2
+Jul 16 18:12:32 server CRON[71707]: session opened for user root
+Jul 16 18:12:33 server sshd[80347]: Accepted password for mridul from 192.168.1.50 port 59425 ssh2
+Jul 16 18:12:34 server sshd[48543]: Accepted password for db_backup from 192.168.1.12 port 49581 ssh2
+Jul 16 18:12:34 server sshd[92600]: Accepted password for system_daemon from 10.0.0.15 port 49969 ssh2
+Jul 16 18:12:35 server CRON[85009]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:35 server sshd[22460]: Accepted password for admin from 172.16.5.9 port 57326 ssh2
+Jul 16 18:12:36 server CRON[99919]: session closed for user root
+Jul 16 18:12:38 server sshd[53261]: Accepted password for admin from 192.168.1.50 port 60861 ssh2
+Jul 16 18:12:39 server CRON[13561]: session opened for user root
+Jul 16 18:12:39 server CRON[20225]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:12:43 server sshd[17788]: Accepted password for admin from 192.168.1.12 port 61025 ssh2
+Jul 16 18:12:44 server sshd[78477]: Accepted password for admin from 10.0.0.15 port 65069 ssh2
+Jul 16 18:12:45 server CRON[90739]: session closed for user root
+Jul 16 18:12:46 server CRON[74517]: session opened for user root
+Jul 16 18:12:46 server CRON[61551]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:47 server CRON[82208]: session closed for user root
+Jul 16 18:12:49 server sshd[95823]: Accepted password for db_backup from 192.168.1.50 port 51090 ssh2
+Jul 16 18:12:49 server CRON[19424]: session closed for user root
+Jul 16 18:12:50 server CRON[19913]: session closed for user root
+Jul 16 18:12:51 server sshd[77189]: Accepted password for admin from 192.168.1.12 port 50542 ssh2
+Jul 16 18:12:51 server CRON[63795]: session opened for user root
+Jul 16 18:12:52 server CRON[38288]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:12:54 server sshd[26642]: Accepted password for system_daemon from 10.0.0.15 port 56642 ssh2
+Jul 16 18:12:54 server CRON[92751]: session opened for user root
+Jul 16 18:12:55 server sshd[28759]: Accepted password for mridul from 10.0.0.15 port 60999 ssh2
+Jul 16 18:12:57 server CRON[82898]: session opened for user root
+Jul 16 18:12:57 server sshd[97863]: Accepted password for system_daemon from 10.0.0.15 port 52652 ssh2
+Jul 16 18:13:01 server CRON[54478]: session closed for user root
+Jul 16 18:13:01 server sshd[10910]: Accepted password for developer from 172.16.5.9 port 64337 ssh2
+Jul 16 18:13:02 server sshd[44653]: Accepted password for developer from 10.0.0.15 port 54907 ssh2
+Jul 16 18:13:03 server CRON[75199]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:05 server sshd[77160]: Accepted password for admin from 192.168.1.12 port 64482 ssh2
+Jul 16 18:13:05 server CRON[22491]: session opened for user root
+Jul 16 18:13:06 server sshd[83056]: Accepted password for system_daemon from 10.0.0.15 port 62752 ssh2
+Jul 16 18:13:06 server sshd[34752]: Accepted password for admin from 127.0.0.1 port 62052 ssh2
+Jul 16 18:13:07 server sshd[89201]: Accepted password for system_daemon from 172.16.5.9 port 50355 ssh2
+Jul 16 18:13:07 server CRON[63378]: session closed for user root
+Jul 16 18:13:09 server sshd[72194]: Accepted password for db_backup from 10.0.0.15 port 57029 ssh2
+Jul 16 18:13:14 server sshd[45555]: Accepted password for system_daemon from 192.168.1.50 port 50375 ssh2
+Jul 16 18:13:14 server sshd[80756]: Accepted password for admin from 10.0.0.15 port 54405 ssh2
+Jul 16 18:13:17 server CRON[89769]: session opened for user root
+Jul 16 18:13:17 server sshd[55486]: Accepted password for admin from 172.16.5.9 port 51166 ssh2
+Jul 16 18:13:18 server CRON[40968]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:18 server CRON[41214]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:19 server CRON[37701]: session opened for user root
+Jul 16 18:13:19 server sshd[10017]: Accepted password for admin from 172.16.5.9 port 53499 ssh2
+Jul 16 18:13:20 server sshd[65303]: Accepted password for developer from 127.0.0.1 port 63684 ssh2
+Jul 16 18:13:20 server CRON[99326]: session opened for user root
+Jul 16 18:13:21 server CRON[76941]: session opened for user root
+Jul 16 18:13:22 server CRON[61220]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:22 server sshd[94739]: Accepted password for system_daemon from 192.168.1.50 port 57721 ssh2
+Jul 16 18:13:23 server CRON[49751]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:25 server CRON[85738]: session closed for user root
+Jul 16 18:13:25 server sshd[16680]: Accepted password for mridul from 192.168.1.50 port 56476 ssh2
+Jul 16 18:13:27 server CRON[79512]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:28 server CRON[50407]: session opened for user root
+Jul 16 18:13:28 server sshd[36888]: Accepted password for db_backup from 172.16.5.9 port 63392 ssh2
+Jul 16 18:13:28 server sshd[37715]: Accepted password for mridul from 127.0.0.1 port 60879 ssh2
+Jul 16 18:13:29 server sshd[87433]: Accepted password for mridul from 192.168.1.12 port 52251 ssh2
+Jul 16 18:13:30 server sshd[18263]: Accepted password for developer from 172.16.5.9 port 57365 ssh2
+Jul 16 18:13:30 server CRON[70188]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:31 server sshd[84974]: Accepted password for system_daemon from 192.168.1.50 port 60266 ssh2
+Jul 16 18:13:32 server sshd[71187]: Accepted password for system_daemon from 10.0.0.15 port 52524 ssh2
+Jul 16 18:13:33 server sshd[77781]: Accepted password for developer from 10.0.0.15 port 62217 ssh2
+Jul 16 18:13:33 server sshd[63014]: Accepted password for system_daemon from 172.16.5.9 port 51110 ssh2
+Jul 16 18:13:34 server CRON[76747]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:35 server CRON[31665]: session closed for user root
+Jul 16 18:13:36 server sshd[19997]: Accepted password for admin from 192.168.1.50 port 54612 ssh2
+Jul 16 18:13:38 server sshd[37073]: Accepted password for db_backup from 172.16.5.9 port 59547 ssh2
+Jul 16 18:13:38 server CRON[88013]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:39 server CRON[88034]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:40 server sshd[69751]: Accepted password for admin from 127.0.0.1 port 64847 ssh2
+Jul 16 18:13:41 server sshd[43871]: Accepted password for developer from 10.0.0.15 port 61695 ssh2
+Jul 16 18:13:43 server sshd[16775]: Accepted password for admin from 172.16.5.9 port 53457 ssh2
+Jul 16 18:13:44 server CRON[75070]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:44 server CRON[41100]: session closed for user root
+Jul 16 18:13:46 server sshd[98671]: Accepted password for system_daemon from 127.0.0.1 port 54381 ssh2
+Jul 16 18:13:46 server sshd[93570]: Accepted password for system_daemon from 127.0.0.1 port 49321 ssh2
+Jul 16 18:13:47 server sshd[46839]: Accepted password for system_daemon from 192.168.1.50 port 61656 ssh2
+Jul 16 18:13:48 server CRON[21274]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:49 server CRON[81745]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:50 server sshd[48295]: Accepted password for developer from 10.0.0.15 port 50163 ssh2
+Jul 16 18:13:52 server CRON[75993]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:13:53 server CRON[37751]: session closed for user root
+Jul 16 18:13:53 server CRON[49533]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:55 server sshd[15533]: Accepted password for system_daemon from 10.0.0.15 port 52998 ssh2
+Jul 16 18:13:55 server CRON[85933]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:13:57 server sshd[52674]: Accepted password for developer from 192.168.1.50 port 49345 ssh2
+Jul 16 18:13:58 server CRON[15377]: session closed for user root
+Jul 16 18:13:59 server sshd[80633]: Accepted password for db_backup from 10.0.0.15 port 52793 ssh2
+Jul 16 18:13:59 server sshd[34530]: Accepted password for admin from 192.168.1.12 port 63731 ssh2
+Jul 16 18:14:00 server sshd[15017]: Accepted password for db_backup from 127.0.0.1 port 54748 ssh2
+Jul 16 18:14:01 server CRON[93180]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:02 server sshd[35672]: Accepted password for mridul from 192.168.1.12 port 58379 ssh2
+Jul 16 18:14:03 server CRON[89409]: session opened for user root
+Jul 16 18:14:04 server sshd[32772]: Accepted password for db_backup from 172.16.5.9 port 64460 ssh2
+Jul 16 18:14:05 server CRON[97326]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:07 server sshd[12355]: Accepted password for developer from 192.168.1.12 port 53959 ssh2
+Jul 16 18:14:07 server CRON[36067]: session opened for user root
+Jul 16 18:14:07 server sshd[20470]: Accepted password for mridul from 10.0.0.15 port 64228 ssh2
+Jul 16 18:14:08 server CRON[17803]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:14:10 server CRON[32548]: session closed for user root
+Jul 16 18:14:10 server CRON[78827]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:14:11 server CRON[50362]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:14:11 server sshd[24189]: Accepted password for db_backup from 192.168.1.12 port 60399 ssh2
+Jul 16 18:14:13 server CRON[28837]: session closed for user root
+Jul 16 18:14:13 server CRON[67936]: session opened for user root
+Jul 16 18:14:14 server CRON[77191]: session closed for user root
+Jul 16 18:14:17 server sshd[20759]: Accepted password for system_daemon from 127.0.0.1 port 53611 ssh2
+Jul 16 18:14:18 server CRON[96025]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:19 server sshd[14878]: Accepted password for system_daemon from 192.168.1.50 port 57323 ssh2
+Jul 16 18:14:22 server sshd[72071]: Accepted password for admin from 10.0.0.15 port 61398 ssh2
+Jul 16 18:14:22 server sshd[92068]: Accepted password for system_daemon from 127.0.0.1 port 52493 ssh2
+Jul 16 18:14:23 server sshd[72055]: Accepted password for system_daemon from 10.0.0.15 port 65093 ssh2
+Jul 16 18:14:24 server sshd[63580]: Accepted password for db_backup from 192.168.1.50 port 57017 ssh2
+Jul 16 18:14:25 server sshd[31034]: Accepted password for mridul from 192.168.1.50 port 62328 ssh2
+Jul 16 18:14:26 server sshd[61984]: Accepted password for developer from 192.168.1.12 port 52810 ssh2
+Jul 16 18:14:27 server sshd[24978]: Accepted password for mridul from 10.0.0.15 port 60240 ssh2
+Jul 16 18:14:27 server sshd[20433]: Accepted password for developer from 192.168.1.12 port 49655 ssh2
+Jul 16 18:14:27 server sshd[54939]: Accepted password for db_backup from 127.0.0.1 port 61454 ssh2
+Jul 16 18:14:31 server CRON[66851]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:32 server sshd[27871]: Accepted password for developer from 127.0.0.1 port 58240 ssh2
+Jul 16 18:14:33 server sshd[31344]: Accepted password for system_daemon from 172.16.5.9 port 63775 ssh2
+Jul 16 18:14:35 server CRON[40201]: session closed for user root
+Jul 16 18:14:37 server sshd[39480]: Accepted password for db_backup from 10.0.0.15 port 49387 ssh2
+Jul 16 18:14:38 server CRON[87067]: session opened for user root
+Jul 16 18:14:38 server sshd[57900]: Accepted password for admin from 10.0.0.15 port 53002 ssh2
+Jul 16 18:14:39 server sshd[54717]: Accepted password for admin from 172.16.5.9 port 60268 ssh2
+Jul 16 18:14:39 server CRON[41479]: session closed for user root
+Jul 16 18:14:40 server sshd[78578]: Accepted password for db_backup from 10.0.0.15 port 50895 ssh2
+Jul 16 18:14:40 server CRON[59451]: session opened for user root
+Jul 16 18:14:41 server sshd[85322]: Accepted password for db_backup from 172.16.5.9 port 61474 ssh2
+Jul 16 18:14:41 server sshd[58079]: Accepted password for system_daemon from 192.168.1.12 port 59078 ssh2
+Jul 16 18:14:43 server sshd[96845]: Accepted password for admin from 192.168.1.50 port 56369 ssh2
+Jul 16 18:14:44 server CRON[10419]: session opened for user root
+Jul 16 18:14:45 server CRON[65955]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:48 server sshd[87710]: Accepted password for db_backup from 172.16.5.9 port 54526 ssh2
+Jul 16 18:14:49 server sshd[97802]: Accepted password for developer from 10.0.0.15 port 61299 ssh2
+Jul 16 18:14:50 server sshd[16368]: Accepted password for db_backup from 172.16.5.9 port 54750 ssh2
+Jul 16 18:14:51 server CRON[53571]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:14:52 server CRON[57124]: session closed for user root
+Jul 16 18:14:52 server sshd[63364]: Accepted password for system_daemon from 172.16.5.9 port 57032 ssh2
+Jul 16 18:14:54 server sshd[54214]: Accepted password for developer from 192.168.1.50 port 65238 ssh2
+Jul 16 18:14:54 server CRON[41529]: session closed for user root
+Jul 16 18:14:55 server sshd[76165]: Accepted password for admin from 127.0.0.1 port 63065 ssh2
+Jul 16 18:14:57 server CRON[21066]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:14:57 server CRON[23550]: session opened for user root
+Jul 16 18:15:00 server sshd[23552]: Accepted password for db_backup from 192.168.1.50 port 64077 ssh2
+Jul 16 18:15:01 server CRON[34028]: session closed for user root
+Jul 16 18:15:02 server CRON[10827]: session closed for user root
+Jul 16 18:15:03 server sshd[18389]: Accepted password for developer from 192.168.1.12 port 56311 ssh2
+Jul 16 18:15:04 server sshd[80910]: Accepted password for db_backup from 192.168.1.50 port 58694 ssh2
+Jul 16 18:15:05 server CRON[89896]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:15:06 server sshd[17422]: Accepted password for admin from 127.0.0.1 port 62567 ssh2
+Jul 16 18:15:07 server sshd[48328]: Accepted password for mridul from 192.168.1.50 port 61373 ssh2
+Jul 16 18:15:07 server CRON[23733]: session closed for user root
+Jul 16 18:15:08 server sshd[67114]: Accepted password for system_daemon from 172.16.5.9 port 64060 ssh2
+Jul 16 18:15:09 server sshd[45890]: Accepted password for admin from 192.168.1.50 port 52795 ssh2
+Jul 16 18:15:09 server sshd[39321]: Accepted password for mridul from 192.168.1.12 port 49836 ssh2
+Jul 16 18:15:10 server CRON[45059]: session opened for user root
+Jul 16 18:15:11 server sshd[98365]: Accepted password for system_daemon from 10.0.0.15 port 56837 ssh2
+Jul 16 18:15:11 server CRON[46473]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:15:11 server sshd[41125]: Accepted password for developer from 172.16.5.9 port 64292 ssh2
+Jul 16 18:15:12 server sshd[32573]: Accepted password for mridul from 192.168.1.12 port 52151 ssh2
+Jul 16 18:15:13 server CRON[37983]: session opened for user root
+Jul 16 18:15:14 server sshd[59414]: Accepted password for mridul from 127.0.0.1 port 52192 ssh2
+Jul 16 18:15:15 server sshd[34908]: Accepted password for system_daemon from 192.168.1.50 port 51777 ssh2
+Jul 16 18:15:15 server sshd[35770]: Accepted password for developer from 172.16.5.9 port 62303 ssh2
+Jul 16 18:15:15 server CRON[77580]: session closed for user root
+Jul 16 18:15:16 server sshd[33021]: Accepted password for developer from 192.168.1.50 port 65260 ssh2
+Jul 16 18:15:17 server CRON[87364]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:15:20 server sshd[75287]: Accepted password for developer from 127.0.0.1 port 61527 ssh2
+Jul 16 18:15:20 server CRON[94494]: session opened for user root
+Jul 16 18:15:21 server sshd[89249]: Accepted password for mridul from 192.168.1.50 port 50455 ssh2
+Jul 16 18:15:21 server CRON[26088]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:15:22 server CRON[34896]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:15:24 server sshd[55361]: Accepted password for system_daemon from 10.0.0.15 port 58489 ssh2
+Jul 16 18:15:25 server CRON[72408]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:15:25 server CRON[99149]: session opened for user root
+Jul 16 18:15:26 server sshd[18971]: Accepted password for db_backup from 10.0.0.15 port 52306 ssh2
+Jul 16 18:15:27 server sshd[96084]: Accepted password for system_daemon from 192.168.1.50 port 58437 ssh2
+Jul 16 18:15:28 server sshd[34024]: Accepted password for admin from 192.168.1.50 port 51681 ssh2
+Jul 16 18:15:29 server CRON[64126]: session closed for user root
+Jul 16 18:15:31 server CRON[15411]: session opened for user root
+Jul 16 18:15:31 server sshd[20145]: Accepted password for developer from 127.0.0.1 port 60104 ssh2
+Jul 16 18:15:32 server sshd[85882]: Accepted password for db_backup from 192.168.1.50 port 59252 ssh2
+Jul 16 18:15:32 server CRON[68097]: session opened for user root
+Jul 16 18:15:35 server sshd[45724]: Accepted password for mridul from 10.0.0.15 port 63884 ssh2
+Jul 16 18:15:36 server CRON[36255]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:15:39 server sshd[88261]: Accepted password for admin from 192.168.1.50 port 55537 ssh2
+Jul 16 18:15:40 server sshd[57817]: Accepted password for admin from 172.16.5.9 port 63453 ssh2
+Jul 16 18:15:41 server sshd[14070]: Accepted password for developer from 172.16.5.9 port 54133 ssh2
