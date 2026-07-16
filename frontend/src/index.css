@@ -92,24 +92,24 @@ body {
 .dashboard-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 /* 3-KPI top Row */
 .kpi-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 .kpi-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  padding: 1.25rem 1.5rem;
+  padding: 0.6rem 1rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   display: flex;
   justify-content: space-between;
@@ -129,7 +129,7 @@ body {
 }
 
 .kpi-value {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a202c;
   font-family: 'Inter', sans-serif;
@@ -175,24 +175,19 @@ body {
   border-radius: 50%;
 }
 
-/* Content Columns Grid (Left: Charts/Table, Right: Alerts) */
-.layout-content-grid {
+/* Content Columns Grid System (Fitted to single viewport) */
+.dashboard-grid-middle {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 1.5rem;
-  align-items: start;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 0.75rem;
+  align-items: stretch;
 }
 
-.main-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.sidebar-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.dashboard-grid-bottom {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 0.9fr;
+  gap: 0.75rem;
+  align-items: stretch;
 }
 
 /* Dashboard Cards */
@@ -201,10 +196,10 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .card-header-bar {
@@ -229,7 +224,7 @@ body {
 .split-charts-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 /* Table controls & search row */
@@ -261,8 +256,17 @@ body {
 /* Live Telemetry Table */
 .table-wrapper {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 195px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+}
+
+.table-wrapper th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f7fafc;
 }
 
 table {
@@ -308,7 +312,7 @@ td.mono {
 .alerts-feed-container {
   display: flex;
   flex-direction: column;
-  max-height: 520px;
+  max-height: 195px;
   overflow-y: auto;
   padding-right: 0.25rem;
 }
@@ -394,11 +398,11 @@ td.mono {
   background-color: #1a202c; /* Slick Dark Cyber Background */
   border: 1px solid #2d3748;
   border-radius: 4px;
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .threat-map-title {
@@ -420,7 +424,7 @@ td.mono {
   background-color: #121824; /* Deeper dark blue-gray */
   overflow: hidden;
   border: 1px solid #2d3748;
-  aspect-ratio: 784 / 458; /* Match original SVG dimensions for perfect coordinate mapping */
+  aspect-ratio: 784 / 370; /* Shorter aspect ratio to fit vertically on single screen */
 }
 
 .map-svg-background {

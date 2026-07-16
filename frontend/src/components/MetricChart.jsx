@@ -36,7 +36,7 @@ export function LogsTrendChart({ logs }) {
         <h3 className="card-title">Logs Trend</h3>
         <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Event Count / Time</span>
       </div>
-      <div style={{ width: '100%', height: 200 }}>
+      <div style={{ width: '100%', height: 120 }}>
         <ResponsiveContainer>
           <AreaChart data={data} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
             <defs>
@@ -81,7 +81,7 @@ export function TopDevicesChart({ logs }) {
       <div className="card-header-bar">
         <h3 className="card-title">Top Devices</h3>
       </div>
-      <div style={{ width: '100%', height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: '100%', height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {data.length === 0 ? (
           <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>No device data</span>
         ) : (
@@ -91,8 +91,8 @@ export function TopDevicesChart({ logs }) {
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={35}
-                outerRadius={55}
+                innerRadius={20}
+                outerRadius={36}
                 paddingAngle={3}
                 dataKey="value"
               >
@@ -101,7 +101,7 @@ export function TopDevicesChart({ logs }) {
                 ))}
               </Pie>
               <Tooltip formatter={(value) => [`${value} logs`]} contentStyle={{ fontSize: '10px' }} />
-              <Legend verticalAlign="bottom" height={36} iconType="circle" iconSize={8} wrapperStyle={{ fontSize: '10px' }} />
+              <Legend verticalAlign="bottom" height={20} iconType="circle" iconSize={6} wrapperStyle={{ fontSize: '9px', bottom: 0 }} />
             </PieChart>
           </ResponsiveContainer>
         )}
@@ -193,15 +193,15 @@ export function SeverityDonutChart({ logs }) {
       <div className="card-header-bar">
         <h3 className="card-title">Events by Severity Group</h3>
       </div>
-      <div style={{ width: '100%', height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: '100%', height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <ResponsiveContainer>
           <PieChart>
             <Pie
               data={displayData}
               cx="50%"
               cy="50%"
-              innerRadius={45}
-              outerRadius={65}
+              innerRadius={24}
+              outerRadius={40}
               paddingAngle={hasData ? 5 : 0}
               dataKey="value"
             >
@@ -215,10 +215,10 @@ export function SeverityDonutChart({ logs }) {
             />
             <Legend 
               verticalAlign="bottom" 
-              height={36} 
+              height={20} 
               iconType="circle" 
-              iconSize={8} 
-              wrapperStyle={{ fontSize: '10px' }} 
+              iconSize={6} 
+              wrapperStyle={{ fontSize: '9px', bottom: 0 }} 
             />
           </PieChart>
         </ResponsiveContainer>

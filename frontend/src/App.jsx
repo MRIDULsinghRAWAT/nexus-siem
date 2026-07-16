@@ -226,83 +226,78 @@ export default function App() {
           </div>
         </div>
 
-        {/* Content Layout Columns */}
-        <div className="layout-content-grid">
+        {/* Row 1: Map and Charts side-by-side */}
+        <div className="dashboard-grid-middle">
+          {/* Left: Attacker Geo-Mapping World Map */}
+          <ThreatMap blockedIps={blockedIps} />
           
-          {/* Left Column: Charts and Logs table */}
-          <div className="main-column">
-            
-            {/* Logs Trend full-width Chart */}
+          {/* Right: Stacked charts */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <LogsTrendChart logs={logs} />
-
-            {/* Attacker Geo-Mapping World Map */}
-            <ThreatMap blockedIps={blockedIps} />
-            
-            {/* Split charts: Top Devices and Severity */}
             <div className="split-charts-row">
               <TopDevicesChart logs={logs} />
               <SeverityDonutChart logs={logs} />
             </div>
+          </div>
+        </div>
 
-            {/* Live Ingest logs table card */}
-            <div className="card">
-              <div className="table-controls">
-                <h3 className="card-title">Live Ingest Stream</h3>
-                <input
-                  type="text"
-                  placeholder="Search raw logs, hosts, IPs, or users..."
-                  className="search-box"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <LiveLogTable logs={filteredLogs} />
+        {/* Row 2: Live Ingest, Alerts, and SOAR Blocker */}
+        <div className="dashboard-grid-bottom">
+          {/* Column 1: Live Ingest logs table card */}
+          <div className="card">
+            <div className="table-controls">
+              <h3 className="card-title" style={{ fontSize: '0.8rem' }}>Live Ingest Stream</h3>
+              <input
+                type="text"
+                placeholder="Search raw logs..."
+                className="search-box"
+                style={{ width: '160px', padding: '0.35rem 0.6rem', fontSize: '0.75rem' }}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-
+            <LiveLogTable logs={filteredLogs} />
           </div>
 
-          {/* Right Column: Recent Alerts Feed & SOAR Active Defense Blocklist */}
-          <div className="sidebar-column">
-            <AlertCard alerts={alerts} />
-            
-            {/* Active SOAR Firewall Blocker Card */}
-            <div className="card" style={{ padding: '1rem', marginTop: '0.5rem' }}>
-              <div className="card-header-bar" style={{ marginBottom: '1rem' }}>
-                <h3 className="card-title" style={{ fontSize: '0.8rem' }}>SOAR Active Defense</h3>
-                <span className="device-indicator" style={{ backgroundColor: 'rgba(239, 68, 68, 0.08)', borderColor: 'rgba(239, 68, 68, 0.2)', color: 'var(--accent-red)' }}>
-                  <span className="device-dot" style={{ backgroundColor: 'var(--accent-red)' }}></span>
-                  {blockedIps.length} BLOCKED
-                </span>
-              </div>
-              <div className="alerts-feed-container" style={{ maxHeight: '250px' }}>
-                {blockedIps.length === 0 ? (
-                  <div style={{ padding: '1.5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.78rem' }}>
-                    Firewall secure. No active blocks.
-                  </div>
-                ) : (
-                  blockedIps.map((item, idx) => (
-                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.6rem 0.8rem', border: '1px solid var(--border-color)', borderRadius: '4px', backgroundColor: '#fcfcfe', marginBottom: '0.5rem', boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
-                        <span style={{ fontSize: '0.8rem', fontWeight: 700, fontFamily: 'monospace', color: '#1a202c' }}>{item.ip}</span>
-                        <span style={{ fontSize: '0.68rem', color: 'var(--text-secondary)' }} title={item.reason}>
-                          {item.reason?.substring(0, 24)}...
-                        </span>
-                      </div>
-                      <button 
-                        onClick={() => handleUnblock(item.ip)}
-                        style={{ padding: '0.25rem 0.5rem', fontSize: '0.7rem', fontWeight: 600, border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)', backgroundColor: 'transparent', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
-                        onMouseOver={(e) => { e.target.style.backgroundColor = 'var(--accent-blue)'; e.target.style.color = '#fff'; }}
-                        onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--accent-blue)'; }}
-                      >
-                        Unblock
-                      </button>
+          {/* Column 2: Recent Alerts Feed */}
+          <AlertCard alerts={alerts} />
+
+          {/* Column 3: SOAR Active Defense Blocker Card */}
+          <div className="card">
+            <div className="card-header-bar">
+              <h3 className="card-title" style={{ fontSize: '0.8rem' }}>SOAR Active Defense</h3>
+              <span className="device-indicator" style={{ backgroundColor: 'rgba(239, 68, 68, 0.08)', borderColor: 'rgba(239, 68, 68, 0.2)', color: 'var(--accent-red)' }}>
+                <span className="device-dot" style={{ backgroundColor: 'var(--accent-red)' }}></span>
+                {blockedIps.length} BLOCKED
+              </span>
+            </div>
+            <div className="alerts-feed-container">
+              {blockedIps.length === 0 ? (
+                <div style={{ padding: '1.5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.78rem' }}>
+                  Firewall secure. No active blocks.
+                </div>
+              ) : (
+                blockedIps.map((item, idx) => (
+                  <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0.6rem', border: '1px solid var(--border-color)', borderRadius: '4px', backgroundColor: '#fcfcfe', marginBottom: '0.4rem', boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.1rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, fontFamily: 'monospace', color: '#1a202c' }}>{item.ip}</span>
+                      <span style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }} title={item.reason}>
+                        {item.reason?.substring(0, 18)}...
+                      </span>
                     </div>
-                  ))
-                )}
-              </div>
+                    <button 
+                      onClick={() => handleUnblock(item.ip)}
+                      style={{ padding: '0.2rem 0.4rem', fontSize: '0.65rem', fontWeight: 600, border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)', backgroundColor: 'transparent', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
+                      onMouseOver={(e) => { e.target.style.backgroundColor = 'var(--accent-blue)'; e.target.style.color = '#fff'; }}
+                      onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--accent-blue)'; }}
+                    >
+                      Unblock
+                    </button>
+                  </div>
+                ))
+              )}
             </div>
           </div>
-
         </div>
 
       </div>
