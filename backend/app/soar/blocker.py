@@ -3,6 +3,7 @@
 import os
 import json
 import datetime
+from app.soar.geoip import get_ip_location
 
 BLOCKED_FILE = os.path.join(os.path.dirname(__file__), "blocked_ips.json")
 
@@ -40,7 +41,8 @@ def block_ip(ip, reason="Automated SIEM correlation rule trigger"):
         "ip": ip,
         "blocked_at": datetime.datetime.now().isoformat(),
         "reason": reason,
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "location": get_ip_location(ip)
     }
     blocked_ips.append(block_record)
     save_blocked_ips(blocked_ips)

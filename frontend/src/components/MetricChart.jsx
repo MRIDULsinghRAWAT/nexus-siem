@@ -159,3 +159,97 @@ export function SeverityChart({ logs }) {
     </div>
   );
 }
+
+// 4. Severity Donut Chart (INFO, WARNING, CRITICAL)
+export function SeverityDonutChart({ logs }) {
+  const categories = {
+    INFO: 0,
+    WARNING: 0,
+    CRITICAL: 0
+  };
+
+  logs.forEach(log => {
+    const sev = log.severity?.toUpperCase() || 'INFO';
+    if (sev === 'CRITICAL') {
+      categories.CRITICAL += 1;
+    } else if (sev === 'HIGH' || sev === 'MEDIUM') {
+      categories.WARNING += 1;
+    } else {
+      categories.INFO += 1; // info, low, or default fallback
+    }
+  });
+
+  const data = [
+    { name: 'INFO', value: categories.INFO, color: '#3b82f6' },
+    { name: 'WARNING', value: categories.WARNING, color: '#f59e0b' },
+    { name: 'CRITICAL', value: categories.CRITICAL, color: '#ef4444' }
+  ].filter(item => item.value > 0);
+
+  const hasData = data.length > 0;
+  const displayData = hasData ? data : [{ name: 'NO EVENTS', value: 1, color: '#cbd5e1' }];
+
+  return (
+    <div className="card">
+      <div className="card-header-bar">
+        <h3 className="card-title">Events by Severity Group</h3>
+      </div>
+      <div style={{ width: '100%', height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <ResponsiveContainer>
+          <PieChart>
+            <Pie
+              data={displayData}
+              cx="50%"
+              cy="50%"
+              innerRadius={45}
+              outerRadius={65}
+              paddingAngle={hasData ? 5 : 0}
+              dataKey="value"
+            >
+              {displayData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+            <Tooltip 
+              formatter={(value, name) => hasData ? [`${value} logs`, name] : ['No events', 'Status']} 
+              contentStyle={{ fontSize: '10px' }} 
+            />
+            <Legend 
+              verticalAlign="bottom" 
+              height={36} 
+              iconType="circle" 
+              iconSize={8} 
+              wrapperStyle={{ fontSize: '10px' }} 
+            />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+}
+
+// 5. Events Per Second (EPS) Sparkline
+export function EPSSparkline({ data }) {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <AreaChart data={data} margin={{ top: 2, right: 2, left: 2, bottom: 2 }}>
+        <defs>
+          <linearGradient id="epsSparklineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="var(--accent-orange)" stopOpacity={0.4}/>
+            <stop offset="95%" stopColor="var(--accent-orange)" stopOpacity={0}/>
+          </linearGradient>
+        </defs>
+        <Area
+          type="monotone"
+          dataKey="eps"
+          stroke="var(--accent-orange)"
+          strokeWidth={1.5}
+          fillOpacity={1}
+          fill="url(#epsSparklineGrad)"
+          dot={false}
+          isAnimationActive={false}
+        />
+      </AreaChart>
+    </ResponsiveContainer>
+  );
+}
+

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import AlertCard from './components/AlertCard';
 import LiveLogTable from './components/LiveLogTable';
-import { LogsTrendChart, TopDevicesChart, SeverityChart } from './components/MetricChart';
+import { LogsTrendChart, TopDevicesChart, SeverityDonutChart, EPSSparkline } from './components/MetricChart';
+import ThreatMap from './components/ThreatMap';
 import './index.css';
 
 // Dynamically resolve hostname. Connect via HTTP to dashboard backend (port 5000)
@@ -15,6 +16,33 @@ export default function App() {
   const [blockedIps, setBlockedIps] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [trendGrowth, setTrendGrowth] = useState("0 (0.00%)");
+  const [epsVal, setEpsVal] = useState(0);
+  const [epsHistory, setEpsHistory] = useState([]);
+  
+  const logCounterRef = useRef(0);
+
+  // Real-time EPS Sparkline Ticker
+  useEffect(() => {
+    // Pre-populate sparkline history with empty points (last 30 seconds)
+    const initialEPS = [];
+    for (let i = 29; i >= 0; i--) {
+      initialEPS.push({ time: `${i}s ago`, eps: 0 });
+    }
+    setEpsHistory(initialEPS);
+
+    const ticker = setInterval(() => {
+      const currentCount = logCounterRef.current;
+      logCounterRef.current = 0; // Reset counter for the next second
+      setEpsVal(currentCount);
+
+      setEpsHistory(prev => {
+        const nextHist = [...prev.slice(1), { time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }), eps: currentCount }];
+        return nextHist;
+      });
+    }, 1000);
+
+    return () => clearInterval(ticker);
+  }, []);
 
   // Fetch initial history from APIs over HTTP on load and poll periodically
   useEffect(() => {
@@ -60,6 +88,9 @@ export default function App() {
   // Listen for live socket updates
   useEffect(() => {
     socket.on('new_log', (log) => {
+      // Increment real-time EPS counter
+      logCounterRef.current += 1;
+
       setLogs((prev) => {
         const exists = prev.some(l => l.timestamp === log.timestamp && l.raw === log.raw);
         if (exists) return prev;
@@ -149,16 +180,18 @@ export default function App() {
         
         {/* KPI metrics row */}
         <div className="kpi-row">
-          {/* Card 1: All Events */}
+          {/* Card 1: Ingest Volatility / EPS Sparkline */}
           <div className="kpi-card">
-            <div className="kpi-left">
-              <span className="kpi-title">All Events</span>
-              <span className="kpi-value">{logs.length}</span>
+            <div className="kpi-left" style={{ width: '65%' }}>
+              <span className="kpi-title">Ingest Volatility</span>
+              <span className="kpi-value">{epsVal} <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-secondary)' }}>EPS</span></span>
               <span className="kpi-trend trend-up">
                 ▲ {trendGrowth}
               </span>
             </div>
-            <div style={{ fontSize: '1.5rem', opacity: 0.2 }}>📊</div>
+            <div className="kpi-sparkline-container" style={{ width: '35%', height: '40px', alignSelf: 'center' }}>
+              <EPSSparkline data={epsHistory} />
+            </div>
           </div>
 
           {/* Card 2: Syslog Events */}
@@ -201,11 +234,14 @@ export default function App() {
             
             {/* Logs Trend full-width Chart */}
             <LogsTrendChart logs={logs} />
+
+            {/* Attacker Geo-Mapping World Map */}
+            <ThreatMap blockedIps={blockedIps} />
             
             {/* Split charts: Top Devices and Severity */}
             <div className="split-charts-row">
               <TopDevicesChart logs={logs} />
-              <SeverityChart logs={logs} />
+              <SeverityDonutChart logs={logs} />
             </div>
 
             {/* Live Ingest logs table card */}

@@ -10,6 +10,7 @@ from app.database.db_client import init_db, insert_log, insert_alert
 from app.api.logs import logs_bp
 from app.api.alerts import alerts_bp
 from app.soar.blocker import block_ip, unblock_ip, get_blocked_ips
+from app.soar.geoip import get_ip_location
 
 app = Flask(__name__)
 CORS(app)
@@ -53,7 +54,8 @@ def ingest_log():
                 socketio.emit('ip_blocked', {
                     "ip": source_ip,
                     "blocked_at": datetime.datetime.now().isoformat(),
-                    "reason": alert['alert_title']
+                    "reason": alert['alert_title'],
+                    "location": get_ip_location(source_ip)
                 })
         
     return jsonify({"status": "success"}), 200

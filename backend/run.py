@@ -9,6 +9,7 @@ from app.main import app, socketio, engine
 from app.core.parser import parse_log
 from app.database.db_client import insert_log, insert_alert
 from app.soar.blocker import block_ip
+from app.soar.geoip import get_ip_location
 
 # Paths to generated TLS certificates
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -50,7 +51,8 @@ def ingest_log_secure():
                 socketio.emit('ip_blocked', {
                     "ip": source_ip,
                     "blocked_at": datetime.datetime.now().isoformat(),
-                    "reason": alert['alert_title']
+                    "reason": alert['alert_title'],
+                    "location": get_ip_location(source_ip)
                 })
         
     return jsonify({"status": "success"}), 200
