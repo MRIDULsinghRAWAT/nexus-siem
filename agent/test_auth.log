@@ -293,3 +293,12 @@ Jul 16 18:11:42 server sshd[40345]: Accepted password for db_backup from 127.0.0
 Jul 16 18:11:43 server sshd[40200]: Accepted password for db_backup from 10.0.0.15 port 64798 ssh2
 Jul 16 18:11:43 server CRON[59928]: (syslog) CMD (   /usr/sbin/logcheck)
 Jul 16 18:11:44 server CRON[51008]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:11:46 server sshd[47991]: Accepted password for system_daemon from 10.0.0.15 port 60562 ssh2
+Jul 16 18:11:46 server CRON[92700]: session opened for user root
+Jul 16 18:11:47 server sshd[25857]: Accepted password for db_backup from 10.0.0.15 port 58591 ssh2
+Jul 16 18:11:49 server CRON[76109]: (root) CMD (   /usr/local/bin/log_rotation.sh > /dev/null 2>&1)
+Jul 16 18:11:50 server CRON[44571]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 18:11:52 server CRON[79125]: session opened for user root
+Jul 16 18:11:53 server sshd[22491]: Accepted password for db_backup from 10.0.0.15 port 51009 ssh2
+Jul 16 18:11:54 server sshd[89307]: Accepted password for db_backup from 192.168.1.50 port 60879 ssh2
+Jul 16 18:11:57 server sshd[37202]: Accepted password for system_daemon from 192.168.1.50 port 60783 ssh2
