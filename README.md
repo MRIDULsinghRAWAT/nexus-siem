@@ -86,7 +86,8 @@ nexus-siem/
 │
 ├── attacks_sim/            # Network attack simulators
 │   ├── normal_traffic_sim.py
-│   └── brute_force_sim.py
+│   ├── brute_force_sim.py
+│   └── dir_bust_sim.py     # Directory busting web attack simulator
 │
 └── scripts/
     └── generate_certs.py   # PKI Certificate Authority generator
@@ -154,6 +155,12 @@ To feed log events into the SIEM and test the automated SOAR blocker:
   python brute_force_sim.py
   ```
   Watch the attacking IP address appear in the **SOAR Active Defense** widget on the React dashboard. Click **Unblock** to manually lift the blocklist rule.
+* **To launch a Directory Busting Web Attack** (triggers directory busting alerts):
+  ```bash
+  cd attacks_sim
+  python dir_bust_sim.py
+  ```
+
 
 ---
 
