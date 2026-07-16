@@ -1332,3 +1332,16 @@ Jul 16 18:28:05 server sshd[74469]: Accepted password for developer from 192.168
 Jul 16 18:28:05 server CRON[13989]: (syslog) CMD (   /usr/sbin/logcheck)
 Jul 16 18:28:08 server CRON[33947]: (syslog) CMD (   /usr/sbin/logcheck)
 Jul 16 18:28:12 server sshd[78371]: Accepted password for db_backup from 10.0.0.15 port 61004 ssh2
+Jul 16 20:08:40 server sshd[38448]: Accepted password for admin from 192.168.1.50 port 59290 ssh2
+Jul 16 20:08:44 server sshd[76510]: Accepted password for admin from 192.168.1.50 port 55682 ssh2
+Jul 16 20:08:45 server sshd[17282]: Accepted password for system_daemon from 192.168.1.50 port 63317 ssh2
+Jul 16 20:08:47 server sshd[78004]: Accepted password for admin from 192.168.1.50 port 51649 ssh2
+Jul 16 20:08:49 server CRON[82459]: (syslog) CMD (   /usr/sbin/logcheck)
+Jul 16 20:09:06 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:06 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:07 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:07 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:08 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:08 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:09 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
+Jul 16 20:09:09 server sshd[40134]: Failed password for root from 192.168.1.105 port 22 ssh2
