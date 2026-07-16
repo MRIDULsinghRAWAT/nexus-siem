@@ -1,5 +1,5 @@
 {
-  "backend_url": "https://localhost:5001/api/ingest",
+  "backend_url": "https://127.0.0.1:5001/api/ingest",
   "target_logs": [
     {
       "path": "./test_auth.log",
